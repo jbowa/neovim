@@ -20,6 +20,11 @@ set softtabstop=2                   " Number of spaces to use for a <Tab> during
 :set number                         " Line numbers
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Open new splits to the right and below (feels more natural)
+set splitright
+set splitbelow
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " VIM Plug
 call plug#begin()
 
@@ -64,38 +69,30 @@ Plug 'elzr/vim-json'
 
 " Tailwind
 " Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
 
 " Typescript
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
-" let g:python_host_prog='/Users/jbowa/.local/share/virtualenvs/anatama-XiIppuq1/bin/python'
-" let g:python3_host_prog='/Users/jbowa/.local/share/virtualenvs/anatama-XiIppuq1/bin/python3'
 Plug 'Shougo/denite.nvim'
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'flrnd/candid.vim'
 
-" Python
-Plug 'deoplete-plugins/deoplete-jedi'
-
 " Ale
 Plug 'dense-analysis/ale'
-" Check Python files with flake8 and pylint.
-" let b:ale_linters = ['flake8', 'pylint']
-"" Fix Python files with autopep8 and yapf.
-"let b:ale_fixers = ['autopep8', 'yapf']
-" Disable warnings about trailing whitespace for Python files.
-" let b:ale_warn_about_trailing_whitespace = 0
+let g:ale_completion_autoimport = 1
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+ \ 'javascript': ['eslint'],
+ \ 'typescript': ['eslint'],
+ \ }
+let g:ale_sign_error = "◉"
+let g:ale_sign_warning = "◉"
+highlight ALEErrorSign ctermfg=9 ctermbg=15 guifg=#C30500
+highlight ALEWarningSign ctermfg=11 ctermbg=15 guifg=#ED6237
 
 " Airline
 Plug 'vim-airline/vim-airline'
@@ -126,24 +123,6 @@ call plug#end()
 colorscheme dracula
 
 let g:airline_theme='dracula'
-
-""" ale
-" Automatic imports from external modules
-
-let g:ale_completion_autoimport = 1
-let g:ale_fix_on_save = 1
-let g:ale_fixers = {
- \ 'javascript': ['eslint'],
- \ 'typescript': ['eslint'],
- \ }
-let g:ale_sign_error = "◉"
-let g:ale_sign_warning = "◉"
-highlight ALEErrorSign ctermfg=9 ctermbg=15 guifg=#C30500
-highlight ALEWarningSign ctermfg=11 ctermbg=15 guifg=#ED6237
-
-" Open new splits to the right and below (feels more natural)
-set splitright
-set splitbelow
 
 " Autocomplete list with tab
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
