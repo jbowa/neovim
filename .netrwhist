@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/Users/jbowa/code/anatama/packages'
+let g:netrw_dirhist_9='/Users/jbowa/code/action/packages/server/graphql/resolvers'
+let g:netrw_dirhist_8='/Users/jbowa/code/project/packages/server/graphql/types'
+let g:netrw_dirhist_7='/Users/jbowa/code/action/packages/client/components/AtmosphereProvider'
+let g:netrw_dirhist_6='/Users/jbowa/.config'
+let g:netrw_dirhist_5='/Users/jbowa/code/action/packages/server/graphql/mutations'
+let g:netrw_dirhist_4='/Users/jbowa/code/hl-web/src/universal/components/blocks'
+let g:netrw_dirhist_3='/Users/jbowa/code/hl-web/src/universal/modules/workflow'
+let g:netrw_dirhist_2='/Users/jbowa/code/hl-web/src/universal/modules/workflow/components'
+let g:netrw_dirhist_1='/Users/jbowa/code/hl-web/src/universal/modules/workflow'
