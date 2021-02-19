@@ -74,25 +74,7 @@ Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn r
 
 " Typescript
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-Plug 'Shougo/denite.nvim'
 Plug 'leafgarland/typescript-vim'
-Plug 'Quramy/tsuquyomi'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'flrnd/candid.vim'
-
-" Ale
-Plug 'dense-analysis/ale'
-let g:ale_completion_autoimport = 1
-let g:ale_fix_on_save = 1
-let g:ale_fixers = {
- \ 'javascript': ['eslint'],
- \ 'typescript': ['eslint'],
- \ }
-let g:ale_sign_error = "◉"
-let g:ale_sign_warning = "◉"
-highlight ALEErrorSign ctermfg=9 ctermbg=15 guifg=#C30500
-highlight ALEWarningSign ctermfg=11 ctermbg=15 guifg=#ED6237
 
 " Airline
 Plug 'vim-airline/vim-airline'
@@ -117,12 +99,14 @@ Plug 'josuegaleas/jay'
 Plug 'rhysd/vim-color-spring-night'
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'danro/rename.vim'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'flrnd/candid.vim'
 
 call plug#end()
 
-colorscheme dracula
+colorscheme material
 
-let g:airline_theme='dracula'
+let g:airline_theme='material'
 
 " Autocomplete list with tab
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
