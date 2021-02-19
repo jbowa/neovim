@@ -141,22 +141,6 @@ let g:ale_sign_warning = "◉"
 highlight ALEErrorSign ctermfg=9 ctermbg=15 guifg=#C30500
 highlight ALEWarningSign ctermfg=11 ctermbg=15 guifg=#ED6237
 
-""" black
-" Run black on save
-" autocmd BufWritePre *.py execute ':Black'
-
-" Skip bytecode verification
-let g:black_fast = 1
-
-" Width of code before it gets wrapped
-let g:black_linelength = 80
-
-" Normalize all strings to use double quotes
-let g:black_skip_string_normalization = 0
-
-" Virtual environment path used to run black
-let g:black_virtualenv="~/.virtualenvs/black"
-
 " Open new splits to the right and below (feels more natural)
 set splitright
 set splitbelow
